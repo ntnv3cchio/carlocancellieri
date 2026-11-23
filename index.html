@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wave Production</title>
+<meta name="description" content="Wave Production (CG7): cortometraggi, cinema e teatro.">
+<meta name="theme-color" content="#060504">
+<link rel="icon" href="assets/logo/wave-production-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --nero:#060504;
+    --carbone:#100e0b;
+    --oro:#e6b34a;
+    --oro-spento:#a47d2c;
+    --avorio:#ede6d6;
+    --sabbia:#9a917c;
+    --gutter:clamp(20px,5vw,72px);
+  }
+  *{box-sizing:border-box;margin:0}
+  html{background:var(--nero);color:var(--avorio);scroll-behavior:smooth}
+  body{font-family:"Jost",system-ui,sans-serif;font-weight:300;font-size:18px;line-height:1.6;background:var(--nero);-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  a:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--oro);outline-offset:4px}
+  img,video{display:block;max-width:100%}
+
+  /* Hero: il video del logo è l'unico momento di movimento */
+  .hero{position:relative;min-height:100svh;display:grid;place-items:center;background:#000}
+  .hero video{width:min(100%,1280px);aspect-ratio:16/9;object-fit:contain}
+  .hero .nav{position:absolute;inset:0 0 auto 0;display:flex;justify-content:flex-end;gap:28px;padding:24px var(--gutter);font-size:15px;letter-spacing:.04em}
+  .hero .nav a{text-decoration:none;color:var(--sabbia);transition:color .2s}
+  .hero .nav a:hover{color:var(--oro)}
+  .hero .scroll{position:absolute;bottom:28px;left:50%;translate:-50% 0;color:var(--sabbia);font-size:14px;text-decoration:none}
+
+  /* Manifesto */
+  .manifesto{padding:clamp(80px,14vw,180px) var(--gutter);max-width:1100px;margin-inline:auto}
+  .manifesto p{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:clamp(30px,4.6vw,58px);line-height:1.15;text-wrap:balance}
+  .manifesto small{display:block;margin-top:32px;color:var(--sabbia);font-size:16px;max-width:46ch}
+
+  h2{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:clamp(28px,3.4vw,40px);line-height:1.1}
+
+  /* Lavoro in evidenza */
+  .featured{padding:0 var(--gutter) clamp(80px,12vw,160px);display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(28px,6vw,96px);align-items:center;max-width:1280px;margin-inline:auto}
+  .featured img{width:100%;height:auto;box-shadow:0 30px 80px -30px rgba(230,179,74,.25)}
+  .featured .type{color:var(--oro);font-size:15px;letter-spacing:.04em;margin-bottom:12px}
+  .featured h2{font-size:clamp(48px,8vw,110px);line-height:.95;margin-bottom:24px}
+  .featured .by{color:var(--avorio);margin-bottom:8px}
+  .featured .cast{color:var(--sabbia);max-width:44ch}
+
+  /* Striscia a pellicola */
+  .works{background:var(--carbone);padding:clamp(56px,8vw,96px) 0}
+  .works header{padding:0 var(--gutter);margin-bottom:32px;display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+  .works header p{color:var(--sabbia);font-size:15px}
+  .strip{display:flex;gap:18px;overflow-x:auto;padding:34px var(--gutter);scroll-snap-type:x proximity;scroll-padding-inline:var(--gutter);scrollbar-width:thin;scrollbar-color:var(--oro-spento) transparent;
+    background:
+      radial-gradient(circle,var(--nero) 0 4px,transparent 5px) 0 8px/26px 18px repeat-x,
+      radial-gradient(circle,var(--nero) 0 4px,transparent 5px) 0 calc(100% - 8px)/26px 18px repeat-x;
+    background-attachment:local;}
+  .strip::-webkit-scrollbar{height:8px}
+  .strip::-webkit-scrollbar-thumb{background:var(--oro-spento);border-radius:4px}
+  .strip figure{flex:0 0 clamp(230px,24vw,320px);scroll-snap-align:start}
+  .strip img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:top;background:#000}
+  .strip figcaption{padding-top:12px}
+  .strip figcaption b{display:block;font-family:"Cormorant Garamond",serif;font-weight:600;font-size:22px;line-height:1.15}
+  .strip figcaption span{color:var(--sabbia);font-size:14px}
+
+  /* Contatti */
+  .contact{padding:clamp(80px,12vw,160px) var(--gutter);display:grid;justify-items:center;text-align:center;gap:28px}
+  .contact img{width:min(280px,60vw);height:auto}
+  .contact h2{max-width:20ch;text-wrap:balance}
+  .contact a.cta{border:1px solid var(--oro);color:var(--oro);padding:14px 30px;text-decoration:none;font-size:16px;letter-spacing:.03em;transition:background .2s,color .2s}
+  .contact a.cta:hover{background:var(--oro);color:var(--nero)}
+  footer{padding:24px var(--gutter) 40px;color:var(--sabbia);font-size:14px;text-align:center}
+
+  @media (max-width:760px){
+    body{font-size:17px}
+    .featured{grid-template-columns:1fr}
+    .hero .nav{gap:18px}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <nav class="nav" aria-label="Principale">
+    <a href="#in-fiore">In fiore</a>
+    <a href="#lavori">Lavori</a>
+    <a href="#contatti">Contatti</a>
+  </nav>
+  <video autoplay muted loop playsinline preload="auto" poster="assets/logo/wave-production-logo.png" aria-label="Logo animato di Wave Production">
+    <source src="assets/video/wave-logo-animato.mp4" type="video/mp4">
+  </video>
+  <a class="scroll" href="#manifesto" aria-label="Scorri">Scorri</a>
+</header>
+
+<main>
+  <section class="manifesto" id="manifesto">
+    <p>Storie brevi, girate con cura, per chi le guarda fino all'ultimo fotogramma.</p>
+    <small>Wave Production, sigla CG7, produce cortometraggi e porta in scena film e spettacoli teatrali.</small>
+  </section>
+
+  <section class="featured" id="in-fiore" aria-labelledby="t-infiore">
+    <img src="assets/foto/locandine/in-fiore.jpg" alt="Locandina del cortometraggio In fiore: due persone si baciano tra fiori su sfondo scuro" width="851" height="1205">
+    <div>
+      <p class="type">Cortometraggio</p>
+      <h2 id="t-infiore">In fiore</h2>
+      <p class="by">Un film di Carlo Cancellieri</p>
+      <p class="cast">Con Beatrice Bartoni, Claudia Tosoni, Matilde Contarin e Francesco Maria Dominedò.</p>
+    </div>
+  </section>
+
+  <section class="works" id="lavori" aria-labelledby="t-lavori">
+    <header>
+      <h2 id="t-lavori">Altri lavori</h2>
+      <p>Scorri di lato</p>
+    </header>
+    <div class="strip" tabindex="0" role="region" aria-label="Locandine dei lavori">
+      <figure><img loading="lazy" src="assets/foto/locandine/il-mister.jpg" alt="Locandina de Il Mister"><figcaption><b>Il Mister</b><span>Regia di Elisa Marrai</span></figcaption></figure>
+      <figure><img loading="lazy" src="assets/foto/locandine/il-tempo-delle-sirene.jpg" alt="Locandina de Il tempo delle sirene"><figcaption><b>Il tempo delle sirene</b><span>Regia di Valerio Di Lorenzo</span></figcaption></figure>
+      <figure><img loading="lazy" src="assets/foto/locandine/la-stella-di-roma.jpg" alt="Locandina de La stella di Roma"><figcaption><b>La stella di Roma</b><span>Regia di Pascal</span></figcaption></figure>
+      <figure><img loading="lazy" src="assets/foto/locandine/dei-delitti-e-co.jpg" alt="Locandina di Dei delitti &amp; Co"><figcaption><b>Dei delitti &amp; Co</b><span>Regia di Giampaolo Mai</span></figcaption></figure>
+      <figure><img loading="lazy" src="assets/foto/locandine/due-volte-natale.jpg" alt="Locandina di Due volte Natale"><figcaption><b>Due volte Natale</b><span>Testo di Marco Falaguasta</span></figcaption></figure>
+      <figure><img loading="lazy" src="assets/foto/locandine/la-cena-aziendale.jpg" alt="Locandina de La cena aziendale"><figcaption><b>La cena aziendale</b><span>Regia di Valerio Pitorri</span></figcaption></figure>
+      <figure><img loading="lazy" src="assets/foto/locandine/capodanno-in-giallo-noir.jpg" alt="Locandina di Capodanno in giallo noir"><figcaption><b>Capodanno in giallo noir</b><span>Regia di Gloria Chinellato</span></figcaption></figure>
+    </div>
+  </section>
+
+  <section class="contact" id="contatti">
+    <img src="assets/logo/wave-production-logo.png" alt="Wave Production CG7" width="280" height="280">
+    <h2>Hai una storia da girare?</h2>
+    <a class="cta" href="https://www.instagram.com/waveproduction___/" rel="noopener">Scrivici su Instagram</a>
+  </section>
+</main>
+
+<footer>Wave Production · CG7</footer>
+
+</body>
+</html>
