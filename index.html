@@ -3,9 +3,85 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Wave Production</title>
-<meta name="description" content="Wave Production (CG7): cortometraggi, cinema e teatro.">
+<title>Wave Production CG7 | Produzione di cortometraggi</title>
+<meta name="description" content="Wave Production (CG7) produce cortometraggi e porta in scena film e spettacoli teatrali. Scopri In fiore, Il Mister, Il tempo delle sirene e gli altri lavori.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="theme-color" content="#060504">
+<link rel="canonical" href="https://waveproduction.studio/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Wave Production">
+<meta property="og:locale" content="it_IT">
+<meta property="og:title" content="Wave Production CG7 | Produzione di cortometraggi">
+<meta property="og:description" content="Cortometraggi, film e spettacoli teatrali. Scopri In fiore e gli altri lavori di Wave Production (CG7).">
+<meta property="og:url" content="https://waveproduction.studio/">
+<meta property="og:image" content="https://waveproduction.studio/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Logo di Wave Production CG7: un uomo con una lanterna cammina su una pellicola a forma di onda">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Wave Production CG7 | Produzione di cortometraggi">
+<meta name="twitter:description" content="Cortometraggi, film e spettacoli teatrali. Scopri In fiore e gli altri lavori di Wave Production (CG7).">
+<meta name="twitter:image" content="https://waveproduction.studio/assets/og-image.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://waveproduction.studio/#organization",
+      "name": "Wave Production",
+      "alternateName": ["Wave Production CG7", "CG7"],
+      "url": "https://waveproduction.studio/",
+      "logo": "https://waveproduction.studio/assets/logo/wave-production-logo.png",
+      "image": "https://waveproduction.studio/assets/og-image.jpg",
+      "description": "Wave Production (sigla CG7) è una società di produzione di cortometraggi che porta in scena anche film e spettacoli teatrali.",
+      "knowsAbout": ["cortometraggi", "produzione cinematografica", "produzione teatrale"],
+      "sameAs": ["https://www.instagram.com/waveproduction___/"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://waveproduction.studio/#website",
+      "url": "https://waveproduction.studio/",
+      "name": "Wave Production",
+      "inLanguage": "it-IT",
+      "publisher": {"@id": "https://waveproduction.studio/#organization"}
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://waveproduction.studio/#webpage",
+      "url": "https://waveproduction.studio/",
+      "name": "Wave Production CG7 | Produzione di cortometraggi",
+      "isPartOf": {"@id": "https://waveproduction.studio/#website"},
+      "about": {"@id": "https://waveproduction.studio/#organization"},
+      "primaryImageOfPage": "https://waveproduction.studio/assets/og-image.jpg",
+      "inLanguage": "it-IT"
+    },
+    {
+      "@type": "Movie",
+      "name": "In fiore",
+      "url": "https://waveproduction.studio/#in-fiore",
+      "image": "https://waveproduction.studio/assets/foto/locandine/in-fiore.jpg",
+      "genre": "Cortometraggio",
+      "director": {"@type": "Person", "name": "Carlo Cancellieri"},
+      "actor": [
+        {"@type": "Person", "name": "Beatrice Bartoni"},
+        {"@type": "Person", "name": "Claudia Tosoni"},
+        {"@type": "Person", "name": "Matilde Contarin"},
+        {"@type": "Person", "name": "Francesco Maria Dominedò"}
+      ],
+      "productionCompany": {"@id": "https://waveproduction.studio/#organization"}
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "Che cos'è Wave Production?", "acceptedAnswer": {"@type": "Answer", "text": "Wave Production, sigla CG7, è una società di produzione di cortometraggi che porta in scena anche film e spettacoli teatrali."}},
+        {"@type": "Question", "name": "Quali lavori ha realizzato Wave Production?", "acceptedAnswer": {"@type": "Answer", "text": "Il cortometraggio In fiore, i film Il Mister, Il tempo delle sirene e La stella di Roma, e gli spettacoli teatrali Dei delitti & Co, Due volte Natale, La cena aziendale e Capodanno in giallo noir."}},
+        {"@type": "Question", "name": "Come si contatta Wave Production?", "acceptedAnswer": {"@type": "Answer", "text": "Scrivendo sul profilo Instagram @waveproduction___."}}
+      ]
+    }
+  ]
+}
+</script>
 <link rel="icon" href="assets/logo/wave-production-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,7 +113,7 @@
 
   /* Manifesto */
   .manifesto{padding:clamp(80px,14vw,180px) var(--gutter);max-width:1100px;margin-inline:auto}
-  .manifesto p{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:clamp(30px,4.6vw,58px);line-height:1.15;text-wrap:balance}
+  .manifesto h1{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:clamp(30px,4.6vw,58px);line-height:1.15;text-wrap:balance}
   .manifesto small{display:block;margin-top:32px;color:var(--sabbia);font-size:16px;max-width:46ch}
 
   h2{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:clamp(28px,3.4vw,40px);line-height:1.1}
@@ -68,12 +144,24 @@
   .strip figcaption span{color:var(--sabbia);font-size:14px}
 
   /* Contatti */
+  /* Domande frequenti */
+  .faq{padding:clamp(64px,10vw,120px) var(--gutter);max-width:820px;margin-inline:auto}
+  .faq h2{margin-bottom:28px}
+  .faq details{border-top:1px solid #2a251c;padding:18px 0}
+  .faq details:last-of-type{border-bottom:1px solid #2a251c}
+  .faq summary{cursor:pointer;font-family:"Cormorant Garamond",serif;font-weight:600;font-size:24px;line-height:1.25;list-style-position:outside}
+  .faq summary:focus-visible{outline:2px solid var(--oro);outline-offset:4px}
+  .faq p{color:var(--sabbia);margin-top:12px;max-width:62ch}
+
   .contact{padding:clamp(80px,12vw,160px) var(--gutter);display:grid;justify-items:center;text-align:center;gap:28px}
   .contact img{width:min(280px,60vw);height:auto}
   .contact h2{max-width:20ch;text-wrap:balance}
   .contact a.cta{border:1px solid var(--oro);color:var(--oro);padding:14px 30px;text-decoration:none;font-size:16px;letter-spacing:.03em;transition:background .2s,color .2s}
   .contact a.cta:hover{background:var(--oro);color:var(--nero)}
-  footer{padding:24px var(--gutter) 40px;color:var(--sabbia);font-size:14px;text-align:center}
+  footer{padding:40px var(--gutter) 48px;color:var(--sabbia);font-size:14px;text-align:center;border-top:1px solid #1d1a14;display:grid;gap:10px;justify-items:center}
+  footer a{color:var(--avorio);text-decoration-color:var(--oro-spento);text-underline-offset:3px}
+  footer a:hover{color:var(--oro)}
+  footer .legal{max-width:70ch}
 
   @media (max-width:760px){
     body{font-size:17px}
@@ -99,8 +187,8 @@
 
 <main>
   <section class="manifesto" id="manifesto">
-    <p>Storie brevi, girate con cura, per chi le guarda fino all'ultimo fotogramma.</p>
-    <small>Wave Production, sigla CG7, produce cortometraggi e porta in scena film e spettacoli teatrali.</small>
+    <h1>Wave Production produce cortometraggi, film e spettacoli teatrali.</h1>
+    <small>Wave Production, sigla CG7, racconta storie brevi, girate con cura, per chi le guarda fino all'ultimo fotogramma.</small>
   </section>
 
   <section class="featured" id="in-fiore" aria-labelledby="t-infiore">
@@ -119,14 +207,30 @@
       <p>Scorri di lato</p>
     </header>
     <div class="strip" tabindex="0" role="region" aria-label="Locandine dei lavori">
-      <figure><img loading="lazy" src="assets/foto/locandine/il-mister.jpg" alt="Locandina de Il Mister"><figcaption><b>Il Mister</b><span>Regia di Elisa Marrai</span></figcaption></figure>
-      <figure><img loading="lazy" src="assets/foto/locandine/il-tempo-delle-sirene.jpg" alt="Locandina de Il tempo delle sirene"><figcaption><b>Il tempo delle sirene</b><span>Regia di Valerio Di Lorenzo</span></figcaption></figure>
-      <figure><img loading="lazy" src="assets/foto/locandine/la-stella-di-roma.jpg" alt="Locandina de La stella di Roma"><figcaption><b>La stella di Roma</b><span>Regia di Pascal</span></figcaption></figure>
-      <figure><img loading="lazy" src="assets/foto/locandine/dei-delitti-e-co.jpg" alt="Locandina di Dei delitti &amp; Co"><figcaption><b>Dei delitti &amp; Co</b><span>Regia di Giampaolo Mai</span></figcaption></figure>
-      <figure><img loading="lazy" src="assets/foto/locandine/due-volte-natale.jpg" alt="Locandina di Due volte Natale"><figcaption><b>Due volte Natale</b><span>Testo di Marco Falaguasta</span></figcaption></figure>
-      <figure><img loading="lazy" src="assets/foto/locandine/la-cena-aziendale.jpg" alt="Locandina de La cena aziendale"><figcaption><b>La cena aziendale</b><span>Regia di Valerio Pitorri</span></figcaption></figure>
-      <figure><img loading="lazy" src="assets/foto/locandine/capodanno-in-giallo-noir.jpg" alt="Locandina di Capodanno in giallo noir"><figcaption><b>Capodanno in giallo noir</b><span>Regia di Gloria Chinellato</span></figcaption></figure>
+      <figure><img loading="lazy" width="800" height="1000" src="assets/foto/locandine/il-mister.jpg" alt="Locandina de Il Mister"><figcaption><b>Il Mister</b><span>Regia di Elisa Marrai</span></figcaption></figure>
+      <figure><img loading="lazy" width="800" height="1000" src="assets/foto/locandine/il-tempo-delle-sirene.jpg" alt="Locandina de Il tempo delle sirene"><figcaption><b>Il tempo delle sirene</b><span>Regia di Valerio Di Lorenzo</span></figcaption></figure>
+      <figure><img loading="lazy" width="800" height="1000" src="assets/foto/locandine/la-stella-di-roma.jpg" alt="Locandina de La stella di Roma"><figcaption><b>La stella di Roma</b><span>Regia di Pascal</span></figcaption></figure>
+      <figure><img loading="lazy" width="800" height="1000" src="assets/foto/locandine/dei-delitti-e-co.jpg" alt="Locandina di Dei delitti &amp; Co"><figcaption><b>Dei delitti &amp; Co</b><span>Regia di Giampaolo Mai</span></figcaption></figure>
+      <figure><img loading="lazy" width="800" height="1000" src="assets/foto/locandine/due-volte-natale.jpg" alt="Locandina di Due volte Natale"><figcaption><b>Due volte Natale</b><span>Testo di Marco Falaguasta</span></figcaption></figure>
+      <figure><img loading="lazy" width="800" height="1000" src="assets/foto/locandine/la-cena-aziendale.jpg" alt="Locandina de La cena aziendale"><figcaption><b>La cena aziendale</b><span>Regia di Valerio Pitorri</span></figcaption></figure>
+      <figure><img loading="lazy" width="800" height="1000" src="assets/foto/locandine/capodanno-in-giallo-noir.jpg" alt="Locandina di Capodanno in giallo noir"><figcaption><b>Capodanno in giallo noir</b><span>Regia di Gloria Chinellato</span></figcaption></figure>
     </div>
+  </section>
+
+  <section class="faq" id="domande" aria-labelledby="t-faq">
+    <h2 id="t-faq">Domande frequenti</h2>
+    <details>
+      <summary>Che cos'è Wave Production?</summary>
+      <p>Wave Production, sigla CG7, è una società di produzione di cortometraggi che porta in scena anche film e spettacoli teatrali.</p>
+    </details>
+    <details>
+      <summary>Quali lavori ha realizzato Wave Production?</summary>
+      <p>Il cortometraggio In fiore, i film Il Mister, Il tempo delle sirene e La stella di Roma, e gli spettacoli teatrali Dei delitti &amp; Co, Due volte Natale, La cena aziendale e Capodanno in giallo noir.</p>
+    </details>
+    <details>
+      <summary>Come si contatta Wave Production?</summary>
+      <p>Scrivendo sul profilo Instagram <a href="https://www.instagram.com/waveproduction___/" rel="noopener">@waveproduction___</a>.</p>
+    </details>
   </section>
 
   <section class="contact" id="contatti">
@@ -136,7 +240,10 @@
   </section>
 </main>
 
-<footer>Wave Production · CG7</footer>
+<footer>
+  <p>Wave Production · CG7</p>
+  <p>Design, sviluppo e produzione a cura di <a href="https://www.samefra.com" rel="noopener">SAMEFRA</a></p>
+</footer>
 
 </body>
 </html>
