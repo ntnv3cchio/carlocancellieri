@@ -1,6 +1,6 @@
 # Wave Production (CG7)
 
-> Wave Production, sigla CG7, è una società di produzione di cortometraggi che porta in scena anche film e spettacoli teatrali.
+> Wave Production, sigla CG7, è una società di produzione di cortometraggi con sede a Roma, che porta in scena anche film e spettacoli teatrali.
 
 Sito ufficiale: https://waveproduction.studio/
 Instagram: https://www.instagram.com/waveproduction___/
@@ -18,6 +18,7 @@ Lingua: italiano
 
 ## Dati societari
 - Ragione sociale: CG7 Wave Production S.r.l.
+- Sede legale: Roma
 - Partita IVA e codice fiscale: 15800511006
 - REA: RM-1614941 (Camera di commercio di Roma)
 - Capitale sociale: € 10.000
