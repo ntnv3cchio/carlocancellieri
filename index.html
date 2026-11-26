@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Wave Production">
 <meta property="og:locale" content="it_IT">
 <meta property="og:title" content="Wave Production CG7 | Produzione di cortometraggi a Roma">
-<meta property="og:description" content="Il Mister, Il tempo delle sirene, In fiore e gli altri lavori di Wave Production (CG7), tra film e teatro.">
+<meta property="og:description" content="In fiore, Il Mister, Il tempo delle sirene e gli altri lavori di Wave Production (CG7), tra film e teatro.">
 <meta property="og:url" content="https://waveproduction.studio/">
 <meta property="og:image" content="https://waveproduction.studio/assets/og-image.jpg">
 <meta property="og:image:width" content="1200">
@@ -21,7 +21,7 @@
 <meta property="og:image:alt" content="Logo di Wave Production CG7: un uomo con una lanterna cammina su una pellicola a forma di onda">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Wave Production CG7 | Produzione di cortometraggi a Roma">
-<meta name="twitter:description" content="Il Mister, Il tempo delle sirene, In fiore e gli altri lavori di Wave Production (CG7), tra film e teatro.">
+<meta name="twitter:description" content="In fiore, Il Mister, Il tempo delle sirene e gli altri lavori di Wave Production (CG7), tra film e teatro.">
 <meta name="twitter:image" content="https://waveproduction.studio/assets/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -84,6 +84,42 @@
       },
       "primaryImageOfPage": "https://waveproduction.studio/assets/og-image.jpg",
       "inLanguage": "it-IT"
+    },
+    {
+      "@type": "Movie",
+      "name": "In fiore",
+      "url": "https://waveproduction.studio/#in-fiore",
+      "image": [
+        "https://waveproduction.studio/assets/foto/locandine/in-fiore.jpg",
+        "https://waveproduction.studio/assets/foto/film/fiore-cover-1920.webp",
+        "https://waveproduction.studio/assets/foto/film/fiore-scena-1-1920.webp"
+      ],
+      "genre": "Cortometraggio",
+      "director": {
+        "@type": "Person",
+        "name": "Carlo Cancellieri"
+      },
+      "actor": [
+        {
+          "@type": "Person",
+          "name": "Beatrice Bartoni"
+        },
+        {
+          "@type": "Person",
+          "name": "Claudia Tosoni"
+        },
+        {
+          "@type": "Person",
+          "name": "Matilde Contarin"
+        },
+        {
+          "@type": "Person",
+          "name": "Francesco Maria Dominedò"
+        }
+      ],
+      "productionCompany": {
+        "@id": "https://waveproduction.studio/#organization"
+      }
     },
     {
       "@type": "Movie",
@@ -152,38 +188,6 @@
       }
     },
     {
-      "@type": "Movie",
-      "name": "In fiore",
-      "url": "https://waveproduction.studio/#in-fiore",
-      "image": "https://waveproduction.studio/assets/foto/locandine/in-fiore.jpg",
-      "genre": "Cortometraggio",
-      "director": {
-        "@type": "Person",
-        "name": "Carlo Cancellieri"
-      },
-      "actor": [
-        {
-          "@type": "Person",
-          "name": "Beatrice Bartoni"
-        },
-        {
-          "@type": "Person",
-          "name": "Claudia Tosoni"
-        },
-        {
-          "@type": "Person",
-          "name": "Matilde Contarin"
-        },
-        {
-          "@type": "Person",
-          "name": "Francesco Maria Dominedò"
-        }
-      ],
-      "productionCompany": {
-        "@id": "https://waveproduction.studio/#organization"
-      }
-    },
-    {
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -222,6 +226,14 @@
     }
   ]
 }
+</script>
+<script>
+  // Intro: una volta per visita, mai con movimento ridotto o arrivando su una sezione precisa
+  try {
+    if (!location.hash && !matchMedia('(prefers-reduced-motion: reduce)').matches && !sessionStorage.getItem('intro')) {
+      document.documentElement.classList.add('con-intro');
+    }
+  } catch (e) {}
 </script>
 <style>
   :root{
@@ -323,6 +335,7 @@
   /* ---- Apertura su un fotogramma ---- */
   .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
   .hero{min-height:min(100svh,960px);justify-content:space-between;isolation:isolate}
+  .hero picture{position:absolute;inset:0;z-index:-2}
   .hero .sfondo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:68% 30%;z-index:-2}
   .hero::after{content:"";position:absolute;inset:0;z-index:-1;background:
     linear-gradient(90deg,rgba(5,4,3,.82) 0%,rgba(5,4,3,.45) 42%,rgba(5,4,3,0) 66%),
@@ -339,10 +352,12 @@
 
   /* ---- Un mondo per ogni film ---- */
   .film{padding-block:0 clamp(72px,10vw,128px)}
+  .fiore{--fondo:#061013;--riga:#17302f;--accento:#a99bff;background:var(--fondo)}
   .mister{--fondo:#06120a;--riga:#1d3524;--accento:#e8e6da;background:var(--fondo)}
   .sirene{--fondo:#06141f;--riga:#16344a;--accento:#ee869d;background:var(--fondo)}
   .cover{position:relative;max-width:1920px;margin-inline:auto}
   .cover img{width:100%;height:auto}
+  .fiore .cover::after,
   /* Il Mister: la cover sfuma nel verde della sezione */
   .mister .cover::after{content:"";position:absolute;inset:auto 0 0;height:28%;background:linear-gradient(0deg,var(--fondo),transparent)}
   /* Sirene: arte chiara, incorniciata per non abbagliare */
@@ -356,6 +371,7 @@
   .crediti dd{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:26px;line-height:1.3}
   .scene{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:clamp(40px,6vw,72px);list-style:none;padding:0}
   .scene button{display:block;width:100%;padding:0;border:0;background:#000;cursor:zoom-in;overflow:hidden;transition:transform .16s var(--ease)}
+  .fiore .scene img{aspect-ratio:1920/804}
   .scene button:active{transform:scale(.985)}
   .scene img{width:100%;height:auto;aspect-ratio:1920/872;transition:transform .5s var(--ease)}
   @media (hover:hover) and (pointer:fine){.scene button:hover img{transform:scale(1.03)}}
@@ -365,24 +381,39 @@
   dialog img{width:100%;height:auto}
   dialog form{display:flex;justify-content:flex-end;margin-bottom:12px}
 
-  .lavori .wrap{max-width:1040px}
+  .lavori .griglia{grid-template-columns:repeat(5,minmax(0,1fr))}
 
-  .chiusura video{width:min(100%,640px);aspect-ratio:16/9;object-fit:contain;background:#000}
   .chiusura{background:#000}
 
 
+  /* Cinque locandine: sotto il desktop vanno a capo, con l'ultima riga centrata */
+  @media (max-width:1020px){
+    .lavori .griglia{display:flex;flex-wrap:wrap;justify-content:center}
+    .lavori .intro{flex:0 0 100%}
+    .lavori .griglia li{flex:0 0 calc((100% - 40px)/3)}
+    .lavori .griglia ul{display:contents}
+  }
+  @media (max-width:760px){.lavori .griglia li{flex-basis:calc((100% - 14px)/2)}}
+
+  /* ---- Intro con il logo animato ---- */
+  #intro{display:none;position:fixed;inset:0;z-index:20;background:#000;place-content:center;place-items:center;transition:opacity .45s ease}
+  .con-intro #intro,#intro.via{display:grid}
+  #intro.via{opacity:0;pointer-events:none}
+  #intro video{width:min(88vw,560px);height:auto;aspect-ratio:4/3}
+  #intro .btn{position:absolute;right:var(--gutter);bottom:max(28px,env(safe-area-inset-bottom))}
+  .con-intro .hero h1,.con-intro .hero .azioni{animation-play-state:paused}
+
   @media (min-width:761px) and (max-width:1020px){.hero{min-height:min(100svh,80vw)}}
   @media (max-width:760px){
-    .griglia{grid-template-columns:repeat(2,minmax(0,1fr))}
     .testata .marchio img{width:72px}
     .testata .nav{gap:0;font-size:14px}
     .testata .nav a{padding:0 8px}
     .hero{min-height:88svh}
-    .hero .sfondo{height:68%;object-position:76% 0}
+    .hero .sfondo{height:68%;object-position:50% 0}
     .hero::after{background:linear-gradient(0deg,var(--nero) 32%,rgba(5,4,3,.6) 46%,rgba(5,4,3,0) 62%),linear-gradient(180deg,rgba(5,4,3,.7),rgba(5,4,3,0) 22%)}
-    /* Su telefono basta la locandina: la cover ripeterebbe la stessa arte */
-    .film .cover{display:none}
-    .film{padding-top:48px}
+    /* Su telefono, dove la cover ripete l'arte della locandina, basta la locandina. Quella di In fiore è una scena: resta */
+    .mister .cover,.sirene .cover{display:none}
+    .mister,.sirene{padding-top:48px}
     .scheda{grid-template-columns:1fr}
     .scheda .locandina{max-width:360px;margin-inline:auto}
     .crediti div{grid-template-columns:1fr;gap:2px}
@@ -392,13 +423,50 @@
 </style>
 </head>
 <body>
+<div id="intro">
+  <video muted playsinline preload="none" width="560" height="420" aria-label="Logo animato di Wave Production"></video>
+  <button type="button" class="btn">Salta intro</button>
+</div>
+<script>
+  (() => {
+    const pagina = document.documentElement;
+    const intro = document.getElementById('intro');
+    if (!pagina.classList.contains('con-intro')) { intro.remove(); return; }
+    try { sessionStorage.setItem('intro', '1'); } catch (e) {}
+    const filmato = intro.querySelector('video');
+    const gesti = ['keydown', 'wheel', 'touchmove'];
+    let chiusa = false;
+    const chiudi = () => {
+      if (chiusa) return;
+      chiusa = true;
+      gesti.forEach(g => removeEventListener(g, chiudi));
+      intro.classList.add('via');
+      pagina.classList.remove('con-intro');
+      setTimeout(() => intro.remove(), 500);
+    };
+    gesti.forEach(g => addEventListener(g, chiudi, {passive: true}));
+    // Sul click completo, così il tocco non finisce su un link sotto
+    intro.addEventListener('click', chiudi);
+    filmato.addEventListener('ended', () => setTimeout(chiudi, 250));
+    filmato.addEventListener('error', chiudi);
+    filmato.muted = true;
+    filmato.src = 'assets/video/wave-intro.mp4';
+    filmato.play().catch(chiudi);
+    // Se il video non parte o si blocca, la pagina non resta mai coperta
+    setTimeout(() => { if (filmato.currentTime === 0) chiudi(); }, 1800);
+    setTimeout(chiudi, 5500);
+  })();
+</script>
 <a class="skip" href="#contenuto">Vai al contenuto</a>
 <header class="hero">
-  <img class="sfondo" src="assets/foto/film/mister-scena-2-960.webp" srcset="assets/foto/film/mister-scena-2-960.webp 960w, assets/foto/film/mister-scena-2-1920.webp 1920w" sizes="(max-width:760px) 260vw, max(100vw, 220vh)" width="1920" height="872" alt="">
+  <picture>
+    <source media="(max-width:760px)" srcset="assets/foto/film/fiore-apertura-stretta.webp" width="760" height="804">
+    <img class="sfondo" src="assets/foto/film/fiore-apertura-960.webp" srcset="assets/foto/film/fiore-apertura-960.webp 960w, assets/foto/film/fiore-apertura-1920.webp 1920w" sizes="max(100vw, 240vh)" width="1920" height="804" alt="">
+  </picture>
   <div class="testata">
     <a class="marchio" href="#contenuto"><img src="assets/logo/wave-production-logo-rifilato.png" alt="Wave Production" width="240" height="204"></a>
     <nav class="nav" aria-label="Principale">
-      <a href="#il-mister">Film</a>
+      <a href="#in-fiore">Film</a>
       <a href="#lavori">Lavori</a>
       <a href="#domande">Domande</a>
       <a href="#contatti">Contatti</a>
@@ -407,13 +475,33 @@
   <div class="hero-testo">
     <h1>Wave Production, produzione di cortometraggi a Roma.</h1>
     <div class="azioni">
-      <a class="btn pieno" href="#il-mister">Scopri i film</a>
+      <a class="btn pieno" href="#in-fiore">Scopri i film</a>
       <a class="btn" href="#lavori">Tutti i lavori</a>
     </div>
   </div>
 </header>
 
 <main id="contenuto">
+
+  <section class="film fiore" id="in-fiore" aria-labelledby="t-fiore">
+    <h2 class="sr" id="t-fiore">In fiore</h2>
+    <div class="cover"><img src="assets/foto/film/fiore-cover-960.webp" srcset="assets/foto/film/fiore-cover-960.webp 960w, assets/foto/film/fiore-cover-1920.webp 1920w" sizes="100vw" width="1920" height="804" alt="Un uomo a spalle nude guarda in camera, con composizioni di fiori sullo sfondo" loading="lazy"></div>
+    <div class="wrap">
+      <div class="scheda">
+        <img class="locandina" src="assets/foto/locandine/in-fiore.jpg" width="851" height="1205" loading="lazy" alt="Locandina di In fiore">
+        <dl class="crediti">
+<div><dt>Un cortometraggio di</dt><dd>Carlo Cancellieri</dd></div>
+<div><dt>Con</dt><dd>Beatrice Bartoni, Claudia Tosoni, Matilde Contarin, Francesco Maria Dominedò</dd></div>
+        </dl>
+      </div>
+      <ul class="scene" role="list" aria-label="Scene da In fiore">
+<li><button type="button" data-grande="assets/foto/film/fiore-scena-1-1920.webp" aria-label="Ingrandisci: Due donne e un uomo seduti a tavola in un ristorante con le pareti di mattoni"><img src="assets/foto/film/fiore-scena-1-960.webp" srcset="assets/foto/film/fiore-scena-1-960.webp 960w, assets/foto/film/fiore-scena-1-1920.webp 1920w" sizes="(max-width:760px) 100vw, 560px" width="1920" height="804" alt="Due donne e un uomo seduti a tavola in un ristorante con le pareti di mattoni" loading="lazy"></button></li>
+<li><button type="button" data-grande="assets/foto/film/fiore-scena-2-1920.webp" aria-label="Ingrandisci: Visto dall'interno di un'auto: una donna bionda si affaccia al finestrino"><img src="assets/foto/film/fiore-scena-2-960.webp" srcset="assets/foto/film/fiore-scena-2-960.webp 960w, assets/foto/film/fiore-scena-2-1920.webp 1920w" sizes="(max-width:760px) 100vw, 560px" width="1920" height="804" alt="Visto dall'interno di un'auto: una donna bionda si affaccia al finestrino" loading="lazy"></button></li>
+<li><button type="button" data-grande="assets/foto/film/fiore-scena-3-1920.webp" aria-label="Ingrandisci: In una sala prove un uomo indica con il braccio teso, mentre alcuni ragazzi guardano"><img src="assets/foto/film/fiore-scena-3-960.webp" srcset="assets/foto/film/fiore-scena-3-960.webp 960w, assets/foto/film/fiore-scena-3-1920.webp 1920w" sizes="(max-width:760px) 100vw, 560px" width="1920" height="804" alt="In una sala prove un uomo indica con il braccio teso, mentre alcuni ragazzi guardano" loading="lazy"></button></li>
+<li><button type="button" data-grande="assets/foto/film/fiore-scena-4-1920.webp" aria-label="Ingrandisci: Primo piano di una donna che sorride di notte, in una luce calda"><img src="assets/foto/film/fiore-scena-4-960.webp" srcset="assets/foto/film/fiore-scena-4-960.webp 960w, assets/foto/film/fiore-scena-4-1920.webp 1920w" sizes="(max-width:760px) 100vw, 560px" width="1920" height="804" alt="Primo piano di una donna che sorride di notte, in una luce calda" loading="lazy"></button></li>
+      </ul>
+    </div>
+  </section>
 
   <section class="film mister" id="il-mister" aria-labelledby="t-mister">
     <h2 class="sr" id="t-mister">Il Mister</h2>
@@ -458,11 +546,9 @@
       <div class="griglia">
         <div class="intro">
           <h2 id="t-lavori">Altri lavori</h2>
-          <p>In fiore, La stella di Roma e quattro spettacoli teatrali.</p>
-          <p>In fiore è un cortometraggio di Carlo Cancellieri, con Beatrice Bartoni, Claudia Tosoni, Matilde Contarin e Francesco Maria Dominedò.</p>
+          <p>La stella di Roma e quattro spettacoli teatrali.</p>
         </div>
         <ul role="list">
-<li id="in-fiore"><img loading="lazy" width="851" height="1205" src="assets/foto/locandine/in-fiore.jpg" alt="Locandina del cortometraggio In fiore, di Carlo Cancellieri"></li>
 <li><img loading="lazy" width="945" height="1181" src="assets/foto/locandine/la-stella-di-roma.jpg?v=2" alt="Locandina de La stella di Roma, regia di Pascal"></li>
 <li><img loading="lazy" width="945" height="1181" src="assets/foto/locandine/dei-delitti-e-co.jpg?v=2" alt="Locandina dello spettacolo teatrale Dei delitti &amp; Co, regia di Giampaolo Mai"></li>
 <li><img loading="lazy" width="945" height="1181" src="assets/foto/locandine/due-volte-natale.jpg?v=2" alt="Locandina dello spettacolo teatrale Due volte Natale, testo di Marco Falaguasta"></li>
@@ -497,9 +583,6 @@
 
   <section class="chiusura" id="contatti" aria-labelledby="t-contatti">
     <div class="wrap">
-      <video muted loop playsinline preload="none" poster="assets/logo/wave-production-logo.png" aria-label="Logo animato di Wave Production">
-        <source src="assets/video/wave-logo-animato.mp4" type="video/mp4">
-      </video>
       <h2 id="t-contatti">Hai una storia da girare?</h2>
       <div class="azioni">
         <a class="btn pieno" href="https://www.instagram.com/waveproduction___/" rel="noopener">Scrivici su Instagram</a>
@@ -532,12 +615,6 @@
     visore.showModal();
   }));
   visore.addEventListener('click', e => { if (e.target === visore || e.target === grande) visore.close(); });
-
-  // Il logo animato parte solo quando si arriva in fondo, e mai con movimento ridotto
-  const video = document.querySelector('.chiusura video');
-  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    new IntersectionObserver(([v]) => v.isIntersecting ? video.play().catch(() => {}) : video.pause(), {threshold: .4}).observe(video);
-  }
 </script>
 </body>
 </html>
