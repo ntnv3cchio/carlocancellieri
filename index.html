@@ -335,7 +335,6 @@
   /* ---- Apertura su un fotogramma ---- */
   .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
   .hero{min-height:min(100svh,960px);justify-content:space-between;isolation:isolate}
-  .hero picture{position:absolute;inset:0;z-index:-2}
   .hero .sfondo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:68% 30%;z-index:-2}
   .hero::after{content:"";position:absolute;inset:0;z-index:-1;background:
     linear-gradient(90deg,rgba(5,4,3,.82) 0%,rgba(5,4,3,.45) 42%,rgba(5,4,3,0) 66%),
@@ -408,8 +407,8 @@
     .testata .marchio img{width:72px}
     .testata .nav{gap:0;font-size:14px}
     .testata .nav a{padding:0 8px}
-    .hero{min-height:88svh}
-    .hero .sfondo{height:68%;object-position:50% 0}
+    .hero{min-height:min(88svh,820px)}
+    .hero .sfondo{height:68%;object-position:76% 0}
     .hero::after{background:linear-gradient(0deg,var(--nero) 32%,rgba(5,4,3,.6) 46%,rgba(5,4,3,0) 62%),linear-gradient(180deg,rgba(5,4,3,.7),rgba(5,4,3,0) 22%)}
     /* Su telefono, dove la cover ripete l'arte della locandina, basta la locandina. Quella di In fiore è una scena: resta */
     .mister .cover,.sirene .cover{display:none}
@@ -459,10 +458,7 @@
 </script>
 <a class="skip" href="#contenuto">Vai al contenuto</a>
 <header class="hero">
-  <picture>
-    <source media="(max-width:760px)" srcset="assets/foto/film/fiore-apertura-stretta.webp" width="760" height="804">
-    <img class="sfondo" src="assets/foto/film/fiore-apertura-960.webp" srcset="assets/foto/film/fiore-apertura-960.webp 960w, assets/foto/film/fiore-apertura-1920.webp 1920w" sizes="max(100vw, 240vh)" width="1920" height="804" alt="">
-  </picture>
+  <img class="sfondo" src="assets/foto/film/mister-scena-2-960.webp" srcset="assets/foto/film/mister-scena-2-960.webp 960w, assets/foto/film/mister-scena-2-1920.webp 1920w" sizes="(max-width:760px) 260vw, max(100vw, 220vh)" width="1920" height="872" alt="">
   <div class="testata">
     <a class="marchio" href="#contenuto"><img src="assets/logo/wave-production-logo-rifilato.png" alt="Wave Production" width="240" height="204"></a>
     <nav class="nav" aria-label="Principale">
